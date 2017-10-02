@@ -16,7 +16,16 @@ else
 	}
 
 	// Video and Simple post
-	echo $post['content'][1];
+	if( strlen( $input) < 161) {
+  echo $post['content'][1];
+  }
+	else
+	{
+	$tidy = new tidy();
+	$tidy->parseString(mb_strimwidth($post['content'][1], 0, 160, "... " ) ,array('show-body-only'=>true),'utf8');
+	$tidy->cleanRepair();
+	echo $tidy . "...  <a href='" . $post['permalink'] . "'>Read More</a>";
+  }
 }
 
 // Show tags
@@ -25,8 +34,11 @@ if(!empty($post['tags']))
 	$tags = $post['tags'];
 
 	foreach($tags as $key=>$tag)
+	{
+
 		$tags[$key] = '<a class="tag" href="'.Url::tag($tag['name']).'">'.$tag['name_human'].'</a>';
 
+  }
 	$tags = implode(', ',$tags);
 
 	echo '<ul class="tags">';
