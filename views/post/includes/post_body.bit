@@ -10,7 +10,7 @@ else
 	// Video post
 	if($post['type']=='video')
 	{
-		$video_info = Video::video_get_info($post['video'], $theme['video_width'], $theme['video_height']);
+		$video_info = Video::video_get_info($post['video']);
 
 		echo '<div class="fitvid">'.$video_info['embed'].'</div>';
 	}
@@ -25,7 +25,7 @@ if(!empty($post['tags']))
 	$tags = $post['tags'];
 
 	foreach($tags as $key=>$tag)
-		$tags[$key] = '<a class="tag" href="'.Url::tag($tag).'">'.$tag.'</a>';
+		$tags[$key] = '<a class="tag" href="'.Url::tag($tag['name']).'">'.$tag['name_human'].'</a>';
 
 	$tags = implode(', ',$tags);
 
