@@ -16,7 +16,7 @@ else
 	}
 
 	// Video and Simple post
-	echo substr($post['content'][1], 0, 160) . "...";
+	echo $post['content'][1];
 }
 
 // Show tags
