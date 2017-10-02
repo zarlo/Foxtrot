@@ -16,7 +16,7 @@ else
 	}
 
 	// Video and Simple post
-	if( strlen( $input) < 161) {
+	if( strlen($post['content'][1]) < 161) {
   echo $post['content'][1];
   }
 	else
