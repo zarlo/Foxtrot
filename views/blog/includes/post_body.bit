@@ -24,7 +24,7 @@ else
 	$tidy = new tidy();
 	$tidy->parseString(mb_strimwidth($post['content'][1], 0, 260, "... " ) ,array('show-body-only'=>true),'utf8');
 	$tidy->cleanRepair();
-	echo $tidy . "...  <a href='" . $post['permalink'] . "'>Read More</a>";
+	echo $tidy . "<a href='" . $post['permalink'] . "'>Read More</a>";
   }
 }
 
