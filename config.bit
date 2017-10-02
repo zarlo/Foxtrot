@@ -1,0 +1,15 @@
+<?php
+
+$theme = array
+(
+	'name'=>'Foxtrot',
+	'description'=>'Based of the Echo theme',
+	'notes'=>'Fully responsive, Disqus and Facebook commments supported, replace logo image with your own in themes/foxtrot/css/img/logo.png',
+	'author'=>'Zarlo, Paulo Nunes',
+	'version'=>'1.0',
+	'last_update'=>'02/10/2017', // dd/mm/yyyy
+	'url'=>'https://zarlo.xyz', // http://xxxxxxxxxxxxx
+	'version_supported'=>array('4.0') // Nibbleblog version supported
+);
+
+?>
